@@ -1,0 +1,44 @@
+.buttonLogin{
+    background-color: rgb(10, 10, 10);
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    width:90%;
+    margin: 18px; 
+}
+  .CreateUser{
+    margin: 65px;
+    text-decoration: none;
+    // color: inherit;
+  }
+
+.Login_google{
+    display: flex;
+    margin: 0 auto;
+    width: 50px;
+    max-width: 100px;
+    cursor: pointer;
+ }
+
+ .icono_ojo {
+    cursor: pointer;
+    width: 70px;
+    position: fixed;
+    top: 207px;
+    right: -70px;
+    transform: translate(-50%, -50%);
+  }
+  
+  .icono_sobre {
+    cursor: pointer;
+    width: 70px;
+    position: fixed;
+    top: 155px;
+    right: -70px;
+    transform: translate(-50%, -50%);
+  }
+  .Login{
+    text-align: center;
+  }
