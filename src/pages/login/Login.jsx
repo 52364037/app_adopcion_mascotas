@@ -73,14 +73,14 @@ const Login = () => {
       </div>
       <Form className="p-5" onSubmit={handleSubmit(logIn)}>
         <Form.Group className="mb-3">
-          <Form.Control type="email" placeholder="" {...register("email")} />
+          <Form.Control type="email" placeholder=" Email" {...register("email")} />
           <Form.Text className="text-muted">{errors.email?.message}</Form.Text>
         </Form.Group>
 
         <Form.Group className="mb-3">
           <Form.Control
             type={showPassword ? "text" : "password"}
-            placeholder=""
+            placeholder="Password"
             {...register("password")}
           />
           <div className="icono_sobre">
