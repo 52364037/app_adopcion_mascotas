@@ -6,7 +6,7 @@ import PublicRouter from "./PublicRouter";
 import PrivateRouter from "./PrivateRouter";
 import Layout from "../components/Layout";
 import Login from "../pages/login/Login";
-import Home from "../pages/home/Home"; 
+import Home from "../pages/home/Home";
 import Presentacion1 from "../pages/presentacion1/Presentacion1";
 import Presentacion2 from "../pages/presentacion2/Presentacion2";
 import { onAuthStateChanged } from "firebase/auth";
@@ -56,20 +56,20 @@ const AppRouter = () => {
 
   return (
     <BrowserRouter>
-    <Routes>
-    <Route path='/' element={<Layout />}>
-    <Route element={<PublicRouter isAutentication={isLoggedIn} />}>
-            <Route index element={<Login />} />
-            <Route path="register" element={<Register />} />
-            <Route path="presentacion1" element={<Presentacion1 />} />
+      <Routes>
+        <Route path='/' element={<Layout />}>
+          <Route element={<PublicRouter isAutentication={isLoggedIn} />}>
+            <Route index element={<Presentacion1 />} />
             <Route path="presentacion2" element={<Presentacion2 />} />
+            <Route path="login" element={<Login />} />
+            <Route path="register" element={<Register />} />
           </Route>
           <Route element={<PrivateRouter isAutentication={isLoggedIn} />}>
             <Route path="home" element={<Home />} />
-            
+
           </Route>
         </Route>
-    </Routes>
+      </Routes>
     </BrowserRouter>
   );
 };
