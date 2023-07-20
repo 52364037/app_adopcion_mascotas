@@ -2,8 +2,8 @@ import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { logoutActionAsync } from "../../redux/actions/userActions";
 import Image from "react-bootstrap/Image";
-import './Home.scss';
-import CategoriasMascotas from "../../components/Categorias";
+import "./Home.scss";
+// import CategoriasMascotas from "../categorias/Categorias";
 
 const Home = () => {
   const dispatch = useDispatch();
@@ -21,7 +21,7 @@ const Home = () => {
       <button onClick={() => dispatch(logoutActionAsync())}>
         Cerrar Sesión
       </button>
-      <CategoriasMascotas/>
+      {/* <CategoriasMascotas /> */}
     </div>
   );
 };

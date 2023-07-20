@@ -9,6 +9,7 @@ import Login from "../pages/login/Login";
 import Home from "../pages/home/Home"; 
 import Presentacion1 from "../pages/presentacion1/Presentacion1";
 import Presentacion2 from "../pages/presentacion2/Presentacion2";
+import Categorias from "../pages/categorias/Categorias";
 import { onAuthStateChanged } from "firebase/auth";
 import { auth } from "../Firebase/firebaseConfig";
 import Spinner from "react-bootstrap/Spinner";
@@ -63,12 +64,11 @@ const AppRouter = () => {
             <Route path="presentacion2" element={<Presentacion2 />} />
             <Route path="login" element={<Login />} />
             <Route path="register" element={<Register />} />
-            
-           
+
           </Route>
           <Route element={<PrivateRouter isAutentication={isLoggedIn} />}>
             <Route path="home" element={<Home />} />
-            
+            <Route path="categorias" element={<Categorias />} />
           </Route>
         </Route>
     </Routes>
