@@ -1,0 +1,76 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    
+}
+.container_cate {
+    background-color: white;
+
+.card {
+    background-color: white;
+    .card-body {
+        background-color: white;
+    }
+}
+}
+
+.card-textt {
+    
+}
+  .card_text {
+     font-weight: bold;
+     margin-top: 40px;
+     background-color: white;
+    }
+    .LogoGenero {
+        font-size: 36px; /* Cambia el tamaño del texto (puedes ajustar el valor según tus preferencias) */
+        font-weight: bold;
+        background-color: white;
+        
+        img{
+            position: absolute;
+            left: 27%;
+            margin-top: -1.4cm;
+            background-color: white;
+            width: 40px;
+            
+        }
+    }
+   .razayedad {
+        display: flex;
+        gap: 20px;
+        margin-top: 40px;
+        background-color: white;
+        img {
+            background-color: white;          
+        }
+        .card-texto {
+            background-color: white;
+           }
+        .card-text {
+            background-color: white;
+        }
+
+   }
+   .ubication {
+    position: absolute;
+    margin-top: -210px;
+   img {
+    background-color: white;
+    
+   }
+   }
+   .personalidad {
+    background-color: white;
+    .EdadMascota {
+        background-color: white;
+        margin-top: 80px;
+    }
+   }
+   .card-textt {
+    background-color: white;
+    
+   }
+
+
