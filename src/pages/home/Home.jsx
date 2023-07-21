@@ -4,6 +4,7 @@ import { logoutActionAsync } from "../../redux/actions/userActions";
 import Image from "react-bootstrap/Image";
 import './Home.scss';
 import CategoriasMascotas from "../../components/Categorias";
+import Footer from "../../components/footer/Footer";
 
 const Home = () => {
   const dispatch = useDispatch();
@@ -22,8 +23,13 @@ const Home = () => {
         Cerrar Sesión
       </button>
       <CategoriasMascotas/>
+      <Footer/>
+
+      
     </div>
+    
   );
+
 };
 
 export default Home;

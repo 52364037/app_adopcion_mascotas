@@ -1,0 +1,99 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+    .icon_home {
+        position: relative;
+      }
+    
+      .icon_home:before {
+        content: 'Home';
+        position: absolute;
+        bottom: -20px;
+        left: 50%;
+        transform: translateX(-50%);
+        opacity: 0;
+        visibility: hidden;
+        transition: opacity 0.3s ease, visibility 0.3s ease;
+      }
+    
+      .icon_home:hover:before {
+        opacity: 1;
+        visibility: visible;
+      }
+
+      .icon_comment {
+        position: relative;
+      }
+    
+      .icon_comment:before {
+        content: 'Comentarios';
+        position: absolute;
+        bottom: -20px;
+        left: 50%;
+        transform: translateX(-50%);
+        opacity: 0;
+        visibility: hidden;
+        transition: opacity 0.3s ease, visibility 0.3s ease;
+      }
+    
+      .icon_comment:hover:before {
+        opacity: 1;
+        visibility: visible;
+      }
+
+      .icon_heard {
+        position: relative;
+      }
+    
+      .icon_heard:before {
+        content: 'Favoritos';
+        position: absolute;
+        bottom: -20px;
+        left: 50%;
+        transform: translateX(-50%);
+        opacity: 0;
+        visibility: hidden;
+        transition: opacity 0.3s ease, visibility 0.3s ease;
+      }
+    
+      .icon_heard:hover:before {
+        opacity: 1;
+        visibility: visible;
+      }
+
+      
+      .icon_user {
+        position: relative;
+      }
+    
+      .icon_user:before {
+        content: 'Perfil';
+        position: absolute;
+        bottom: -20px;
+        left: 50%;
+        transform: translateX(-50%);
+        opacity: 0;
+        visibility: hidden;
+        transition: opacity 0.3s ease, visibility 0.3s ease;
+      }
+    
+      .icon_user:hover:before {
+        opacity: 1;
+        visibility: visible;
+      }
+
+
+
+      
+
+   
+
+
+
+
+
+  
