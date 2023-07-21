@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { collection, getDocs } from "firebase/firestore";
 import { dataBase } from "../../Firebase/firebaseConfig";
+import FiltroCategorias from "../../pages/filtroCategorias/FiltroCategorias";
 import AdoptaTitle from "../../assets/Adopta una adorable mascota.png";
 import Personalidad from "../../assets/Frame 35.png";
 import genero from "../../assets/hembra.png";
@@ -11,8 +12,11 @@ import "./Categorias.scss";
 
 const CategoriasMascotas = () => {
   const [categoriasMascotas, setCategoriasMascotas] = useState([]);
+  const [filtro, setFiltro] = useState("Todos"); // Estado del filtro
 
   useEffect(() => {
+// Lógica para obtener las categorías de mascotas...
+
     const obtenerCategoriasMascotas = async () => {
       try {
         const categoriasSnapshot = await getDocs(
@@ -30,6 +34,12 @@ const CategoriasMascotas = () => {
     obtenerCategoriasMascotas();
   }, []);
 
+  // Función para manejar el cambio de filtro
+  const handleFiltroChange = (nuevoFiltro) => {
+    setFiltro(nuevoFiltro);
+  };
+  const opcionesFiltro = categoriasMascotas.map((categoria) => categoria.categoria);
+
   return (
     <div>
       <figure className="present11">
@@ -37,7 +47,12 @@ const CategoriasMascotas = () => {
       </figure>
       <h2>Categorías de mascotas</h2>
 
-      {categoriasMascotas.map((categoria, index) => (
+       {/* Agregar los botones de filtro y pasar el estado y función */}
+       <FiltroCategorias opciones={opcionesFiltro} filtro={filtro} onFiltroChange={handleFiltroChange} />
+
+{/* Lista de categorías de mascotas filtradas */}
+      {categoriasMascotas.filter((categoria) => filtro === "Todos" || categoria.categoria === filtro)
+      .map((categoria, index) => (
         <div key={index} className="card" style={{ width: "25rem" }}>
           <img src={categoria.imagen} className="card-img-top" alt="..." />
           <div className="card-body">
@@ -66,7 +81,14 @@ const CategoriasMascotas = () => {
             <figure className="ubication">
             <img src={Ubication} alt="ubication" />
             </figure>
-            <h5 className="card-text">{categoria.ana}  {categoria.kiara}  {categoria.toll} {categoria.pitufa} {categoria.katy} {categoria.misu} {categoria.hermanitos} {categoria.toby} {categoria.tomas} {categoria.noa} </h5>
+            <h5 className="card-text">
+              
+            {/* {Object.entries(categoria).map(([key, value]) => (
+            value && <span key={key}>{value} </span>
+            ))} */}
+              
+               {categoria.ana}  {categoria.kiara}  {categoria.toll} {categoria.pitufa} {categoria.katy} {categoria.misu} {categoria.hermanitos} {categoria.toby} {categoria.tomas} {categoria.noa}  
+              </h5>
             <p className="card-textt">{categoria.historia} </p>
            
 
