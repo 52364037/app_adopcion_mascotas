@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 // import { Button } from 'react-bootstrap';
 import Form from "react-bootstrap/Form";
 import { useForm } from "react-hook-form";
@@ -12,7 +12,7 @@ import {
 import { Link } from "react-router-dom";
 import "./Login.scss";
 import { IoIosMail } from "react-icons/io";
-import { IoIosLock } from "react-icons/io";
+
 import { IoIosEye } from "react-icons/io";
 import google from "../../assets/google-logo.png";
 
@@ -33,6 +33,15 @@ const schema = yup.object({
 // });
 
 const Login = () => {
+  const [showPassword, setShowPassword] = useState(false);
+
+  const handleTogglePassword = () => {
+    setShowPassword(!showPassword);
+  };
+  
+
+
+
   const dispatch = useDispatch()
   const {
     register,
@@ -64,23 +73,21 @@ const Login = () => {
       </div>
       <Form className="p-5" onSubmit={handleSubmit(logIn)}>
         <Form.Group className="mb-3">
-          <Form.Control type="email" placeholder="" {...register("email")} />
+          <Form.Control type="email" placeholder=" Email" {...register("email")} />
           <Form.Text className="text-muted">{errors.email?.message}</Form.Text>
         </Form.Group>
 
         <Form.Group className="mb-3">
           <Form.Control
-            type="password"
-            placeholder=""
+            type={showPassword ? "text" : "password"}
+            placeholder="Password"
             {...register("password")}
           />
           <div className="icono_sobre">
             <IoIosMail />
           </div>
-          <div className="icono_candado">
-            <IoIosLock />
-          </div>
-          <div className="icono_ojo">
+          
+          <div className="icono_ojo" onClick={handleTogglePassword}>
             <IoIosEye />
           </div>
           <Form.Text className="text-muted">
@@ -88,22 +95,22 @@ const Login = () => {
           </Form.Text>
         </Form.Group>
 
-        <button type="submit" className="button ">
+        <button type="submit" className="buttonLogin ">
           Login
         </button>
 
-        <div className="crear_usuario">
+        <div className="crearNuevoUsuario">
           <p>
             {" "}
-            <Link to="/register">Create account</Link>
+            <Link className="CreateUser" to="/register">Create New User</Link>
           </p>
         </div>
       </Form>
-      <div className="Login_google">
+      <div className="">
         <div>
           <figure onClick={handleGoogleLogin}>
-            <img src={google} alt="google" />
-            <p>LOGIN WITH GOOGLE</p>
+            <img className="Login_google" src={google} alt="google" />
+            <p className="Login">LOGIN WITH GOOGLE</p>
           </figure>
         </div>
       </div>

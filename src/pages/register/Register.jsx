@@ -8,7 +8,7 @@ import fileUpLoad from "../../services/fileUpLoad";
 import { useDispatch } from "react-redux";
 import { registerActionAsync } from "../../redux/actions/userActions";
 import "./Register.scss";
-// import { IoIosEye } from 'react-icons/io';
+
 
 
 const schema = yup.object({
@@ -70,7 +70,7 @@ const Register = () => {
   return (
     <Form className="p-5" onSubmit={handleSubmit(handleCreateUser)}>
       <Form.Group className="mb-3">
-        <Form.Label>Create account</Form.Label>
+        <Form.Label>Registrate Aqui</Form.Label>
         <Form.Control
           type="text"
           placeholder="Name"
@@ -120,16 +120,12 @@ const Register = () => {
         <Form.Text className="text-muted">{errors.avatar?.message}</Form.Text>
       </Form.Group>
      </div>
-      <div className="boton_register">
-      <Button variant="" type="submit">
-        Sing in
+      <div >
+      <Button className="boton_register" variant="" type="submit">
+        Registrarme
       </Button>
       </div>
-      <div className="login_inicio">
-      <Button variant="" type="submit">
-        Login
-      </Button>
-      </div>
+      
     </Form>
   );
 };

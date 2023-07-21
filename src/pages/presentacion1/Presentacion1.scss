@@ -1,0 +1,36 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: #FEC7D7;
+}
+
+.present11{
+    // display: flex;
+    // justify-content: center;
+    // align-items: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+// .present button {
+//     background-color: blue;
+//     color: white;
+//     padding: 10px 20px;
+//     border: none;
+//     border-radius: 5px;
+//     cursor: pointer;
+//   }
+  
+  .container button.custom-button {
+    background-color: rgb(10, 10, 10);
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    width:90%;
+    margin: 18px;
+  }
+  
