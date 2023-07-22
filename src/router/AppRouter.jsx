@@ -10,6 +10,9 @@ import Home from "../pages/home/Home";
 import Presentacion1 from "../pages/presentacion1/Presentacion1";
 import Presentacion2 from "../pages/presentacion2/Presentacion2";
 import Categorias from "../pages/categorias/Categorias";
+import Comentarios from "../pages/comentarios/Comentarios";
+import Favoritos from "../pages/favoritos/Favoritos";
+import Perfil from "../pages/perfil/Perfil";
 import { onAuthStateChanged } from "firebase/auth";
 import { auth } from "../Firebase/firebaseConfig";
 import Spinner from "react-bootstrap/Spinner";
@@ -68,6 +71,9 @@ const AppRouter = () => {
           <Route element={<PrivateRouter isAutentication={isLoggedIn} />}>
             <Route path="home" element={<Home />} />
             <Route path="categorias" element={<Categorias />} />
+            <Route path="comentarios" element={<Comentarios />} />
+            <Route path="favoritos" element={<Favoritos />} />
+            <Route path="perfil" element={<Perfil />} />
           </Route>
         </Route>
     </Routes>

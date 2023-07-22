@@ -1,0 +1,62 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: #FEC7D7;
+
+}
+
+
+.Avatar {
+    position: relative;
+    width: 220px; // Cambia el ancho del contenedor
+    left: 120px;
+    top: 50px;
+    height: 70px; // Cambia la altura del contenedor
+    overflow: hidden;
+
+    img {
+        
+        position: absolute;
+        width: 100px; // Cambia el ancho de la imagen para que ocupe todo el espacio del contenedor
+        height: 100px; // Cambia la altura de la imagen para que ocupe todo el espacio del contenedor
+        object-fit: cover; // Ajusta la imagen dentro del contenedor manteniendo la relación de aspecto
+        top: 62%; // Mueve la imagen hacia abajo en un 50% de la altura del contenedor
+        left: 35%; // Mueve la imagen hacia la derecha en un 50% del ancho del contenedor
+        transform: translate(-50%, -50%); // Vuelve a posicionar la imagen en el centro mediante desplazamiento
+    }
+}
+
+.Name_user{
+    position: relative;
+    background-color: rgb(255, 0, 106);
+    top: 60px;
+    left: 165px;
+   font-weight: 100;
+   h2 {
+    font-size: medium;
+    
+ }
+}
+
+.container {
+    position: relative;
+    left: 20px;
+    top: 80px;
+   
+}
+.custom-button {
+    position: relative;
+    background-color: rgb(10, 10, 10);
+    padding: 10px 20px;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    width: 90%;
+    margin-top: 70px;
+    right: 4%;
+    
+}
+
+
+

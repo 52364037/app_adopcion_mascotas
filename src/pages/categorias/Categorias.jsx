@@ -10,7 +10,6 @@ import EdadMascota from "../../assets/edad.png";
 import Ubication from "../../assets/ubication.png";
 import "./Categorias.scss";
 
-
 const CategoriasMascotas = () => {
   const [categoriasMascotas, setCategoriasMascotas] = useState([]);
   const [filtro, setFiltro] = useState("Todos"); // Estado del filtro
