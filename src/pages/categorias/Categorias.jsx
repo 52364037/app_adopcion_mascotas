@@ -9,7 +9,7 @@ import Raza from "../../assets/raza.png";
 import EdadMascota from "../../assets/edad.png";
 import Ubication from "../../assets/ubication.png";
 import "./Categorias.scss";
-import Bloque from "../../assets/Frame 9.png";
+
 
 const CategoriasMascotas = () => {
   const [categoriasMascotas, setCategoriasMascotas] = useState([]);
