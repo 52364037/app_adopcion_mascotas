@@ -64,7 +64,6 @@ const AppRouter = () => {
             <Route path="presentacion2" element={<Presentacion2 />} />
             <Route path="login" element={<Login />} />
             <Route path="register" element={<Register />} />
-
           </Route>
           <Route element={<PrivateRouter isAutentication={isLoggedIn} />}>
             <Route path="home" element={<Home />} />

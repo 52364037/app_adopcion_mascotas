@@ -1,4 +1,6 @@
 import { userTypes } from "../types/userTypes";
+// import { createSlice } from '@reduxjs/toolkit';
+
 
 const initialValue = {
     user: {},
@@ -37,4 +39,9 @@ const userReducer = (state = initialValue, action) => {
     }
 }
 
+
+
 export default userReducer;
+
+
+
