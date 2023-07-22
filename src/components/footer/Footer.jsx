@@ -11,12 +11,13 @@ const Footer = () => {
     return (
 
         <div className="container">
-            <div className="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
+            <div className="container1 d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
                 <a href="#" className="d-flex align-items-center my-2 my-lg-0 me-lg-auto text-white text-decoration-none">
                     <svg className="bi me-2" width="40" height="32" role="img" aria-label="Bootstrap"><use href="#bootstrap" /></svg>
                 </a>
 
-                <ul className="nav col-12 col-lg-auto my-2 justify-content-center my-md-0 text-small">
+               <div className='footer'>
+               <ul className="nav col-12 col-lg-auto my-2 justify-content-center my-md-0 text-small">
                     <li className='Home'>
                         <a href="#" className="nav-link text-secondary">
                             
@@ -56,6 +57,7 @@ const Footer = () => {
                         </a>
                     </li>
                 </ul>
+               </div>
             </div>
         </div>
 
