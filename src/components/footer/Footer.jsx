@@ -6,7 +6,7 @@ import { FaHeart } from 'react-icons/fa6';
 import { FaUserLarge } from 'react-icons/fa6';
 
 const Footer = () => {
-    const [currentRoute, setCurrentRoute] = useState('/');
+    const [ setCurrentRoute] = useState('/');
     const handleRouteChange = (route) => {
         setCurrentRoute(route);
         window.location.href = route;
@@ -52,10 +52,10 @@ const Footer = () => {
                         </button>
                     </li>
                     <li>
-                        <button className="nav-link text-secondary"  onClick={() => handleRouteChange('/perfil')}>
+                        <button className="nav-link text-secondary"  onClick={() => handleRouteChange('/perfil1')}>
                             <svg className="bi4 d-block mx-auto mb-1" width="24" height="24"><use href="#grid" /></svg>
                            
-                            <div className='icon_user' title='Perfil'>
+                            <div className='icon_user' title='Perfil1'>
                                 <FaUserLarge />
                             </div>
                         </button>

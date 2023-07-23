@@ -52,8 +52,9 @@ const CategoriasMascotas = () => {
 
 {/* Lista de categorías de mascotas filtradas */}
       {categoriasMascotas.filter((categoria) => filtro === "Todos" || categoria.categoria === filtro)
-      .map((categoria, index) => (
-        <div key={index} className="card" style={{ width: "25rem" }}>
+      .map((categoria) => (
+        <link key={categoria.id} to={`/mascotas/${categoria.id}`}>
+          <div className="card" style={{ width: "25rem" }}></div>
           <img src={categoria.imagen} className="card-img-top" alt="..." />
           <div className="card-body">
             <h5 className="LogoGenero">
@@ -92,7 +93,7 @@ const CategoriasMascotas = () => {
               Go somewhere
             </a> */}
           </div>
-        </div>
+        </link>
       ))}
     </div>
   );
