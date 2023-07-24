@@ -13,9 +13,9 @@ const FiltroMascotas = ({ opciones, filtro, onFiltroChange }) => {
           onClick={() => onFiltroChange(opcion)}
         >
           {opcion === 'Perros' ? (
-            <img src={imgPerro} alt="Perros" />
+            <img className='BottunGat' src={imgPerro} alt="Perros" />
           ) : (
-            <img src={imgGato} alt="Gatos" />
+            <img className='BottunDog' src={imgGato} alt="Gatos" />
           )}
           {opcion}
         </button>

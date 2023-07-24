@@ -13,6 +13,7 @@ import "./Categorias.scss";
 const CategoriasMascotas = () => {
   const [categoriasMascotas, setCategoriasMascotas] = useState([]);
   const [filtro, setFiltro] = useState("Todos"); // Estado del filtro
+  const [meGustas, setMeGustas] = useState({}); // Estado para contar los "Me gusta"
 
   useEffect(() => {
 // Lógica para obtener las categorías de mascotas...
@@ -38,6 +39,15 @@ const CategoriasMascotas = () => {
   const handleFiltroChange = (nuevoFiltro) => {
     setFiltro(nuevoFiltro);
   };
+
+   // Función para manejar el incremento de "Me gusta"
+   const handleMeGustaClick = (id) => {
+    setMeGustas((prevMeGustas) => ({
+      ...prevMeGustas,
+      [id]: (prevMeGustas[id] || 0) + 1,
+    }));
+  };
+
   const opcionesFiltro = categoriasMascotas.map((categoria) => categoria.categoria);
 
   return (
@@ -53,8 +63,8 @@ const CategoriasMascotas = () => {
 {/* Lista de categorías de mascotas filtradas */}
       {categoriasMascotas.filter((categoria) => filtro === "Todos" || categoria.categoria === filtro)
       .map((categoria) => (
-        <link key={categoria.id} to={`/mascotas/${categoria.id}`}>
-          <div className="card" style={{ width: "25rem" }}></div>
+        <div key={categoria.id} className="card" style={{ width: "25rem" }}> 
+           <div href={`/mascotas/${categoria.id}`}> {/* Reemplazar <link> por <a> */}
           <img src={categoria.imagen} className="card-img-top" alt="..." />
           <div className="card-body">
             <h5 className="LogoGenero">
@@ -93,7 +103,8 @@ const CategoriasMascotas = () => {
               Go somewhere
             </a> */}
           </div>
-        </link>
+          </div>
+        </div>
       ))}
     </div>
   );

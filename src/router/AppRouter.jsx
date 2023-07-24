@@ -60,7 +60,6 @@ const AppRouter = () => {
   return (
     <BrowserRouter>
       <Routes>
-      
         <Route path="/">
           <Route element={<PublicRouter isAutentication={isLoggedIn} />}>
             <Route index element={<Presentacion1 />} />
@@ -80,7 +79,6 @@ const AppRouter = () => {
           </Route>
         </Route>
       </Routes>
-      
     </BrowserRouter>
   );
 };
