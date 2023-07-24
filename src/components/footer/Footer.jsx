@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import "./Footer.scss";
 import { FaHouse } from "react-icons/fa6";
 import { FaComment } from "react-icons/fa6";
@@ -6,7 +6,6 @@ import { FaHeart } from "react-icons/fa6";
 import { FaUserLarge } from "react-icons/fa6";
 
 const Footer = () => {
-    const [currentRoute, setCurrentRoute] = useState("/");
   const handleRouteChange = (route) => {
     window.location.href = route;
   };

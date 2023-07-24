@@ -13,7 +13,7 @@ import "./Categorias.scss";
 const CategoriasMascotas = () => {
   const [categoriasMascotas, setCategoriasMascotas] = useState([]);
   const [filtro, setFiltro] = useState("Todos"); // Estado del filtro
-  const [meGustas, setMeGustas] = useState({}); // Estado para contar los "Me gusta"
+
 
   useEffect(() => {
 // Lógica para obtener las categorías de mascotas...
@@ -40,13 +40,7 @@ const CategoriasMascotas = () => {
     setFiltro(nuevoFiltro);
   };
 
-   // Función para manejar el incremento de "Me gusta"
-   const handleMeGustaClick = (id) => {
-    setMeGustas((prevMeGustas) => ({
-      ...prevMeGustas,
-      [id]: (prevMeGustas[id] || 0) + 1,
-    }));
-  };
+  
 
   const opcionesFiltro = categoriasMascotas.map((categoria) => categoria.categoria);
 
