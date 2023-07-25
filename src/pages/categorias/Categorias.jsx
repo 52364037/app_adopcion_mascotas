@@ -1,8 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { collection, getDocs } from "firebase/firestore";
 import { dataBase } from "../../Firebase/firebaseConfig";
-import { doc, updateDoc } from "firebase/firestore";
-import { FaHeart } from "react-icons/fa";
 import FiltroCategorias from "../../pages/filtroCategorias/FiltroCategorias";
 import AdoptaTitle from "../../assets/Adopta una adorable mascota.png";
 import Personalidad from "../../assets/Frame 35.png";
@@ -12,59 +10,33 @@ import EdadMascota from "../../assets/edad.png";
 import Ubication from "../../assets/ubication.png";
 import "./Categorias.scss";
 
+
 const CategoriasMascotas = () => {
   const [categoriasMascotas, setCategoriasMascotas] = useState([]);
   const [filtro, setFiltro] = useState("Todos"); // Estado del filtro
-  
-  const handleFavoritoClick = async (id) => {
-    try {
-      const mascotaRef = doc(dataBase, "CategoriasMascotas", id);
-      await updateDoc(mascotaRef, { favorito: true });
-      console.log("Mascota marcada como favorita.");
-    } catch (error) {
-      console.error("Error al marcar la mascota como favorita:", error);
-    }
-  };
+ 
+
 
   useEffect(() => {
 // Lógica para obtener las categorías de mascotas...
-const obtenerCategoriasMascotas = async () => {
-  try {
-  
-    const mascotasRef = collection(dataBase, "mascotas");
-    const mascotasSnapshot = await getDocs(mascotasRef);
-    const mascotasData = mascotasSnapshot.docs.map((doc) => ({
-      id: doc.id,
-      ...doc.data(),
-    }));
-    setCategoriasMascotas(mascotasData);
-  } catch (error) {
-    console.error("Error al obtener las mascotas:", error);
-  }
-};
-    // const obtenerCategoriasMascotas = async () => {
-    //   try {
-    //     const categoriasSnapshot = await getDocs(
-    //       collection(dataBase, "CategoriasMascotas")
-    //     );
-    //     const categoriasData = categoriasSnapshot.docs.map((doc) => doc.data());
-    //     console.log(categoriasData);
-
-    //     setCategoriasMascotas(categoriasData);
-    //   } catch (error) {
-    //     console.error("Error al obtener las categorías:", error);
-    //   }
-    // };
-
+    const obtenerCategoriasMascotas = async () => {
+      try {
+        const categoriasSnapshot = await getDocs(
+          collection(dataBase, "CategoriasMascotas")
+        );
+        const categoriasData = categoriasSnapshot.docs.map((doc) => doc.data());
+        console.log(categoriasData);
+        setCategoriasMascotas(categoriasData);
+      } catch (error) {
+        console.error("Error al obtener las categorías:", error);
+      }
+    };
     obtenerCategoriasMascotas();
   }, []);
-
   // Función para manejar el cambio de filtro
   const handleFiltroChange = (nuevoFiltro) => {
     setFiltro(nuevoFiltro);
   };
-
-  
 
   const opcionesFiltro = categoriasMascotas.map((categoria) => categoria.categoria);
 
@@ -74,10 +46,8 @@ const obtenerCategoriasMascotas = async () => {
         <img src={AdoptaTitle} alt="Adopta tu Adorable Mascota" />
       </figure>
       <h2>Categorías de mascotas</h2>
-
        {/* Agregar los botones de filtro y pasar el estado y función */}
        <FiltroCategorias opciones={opcionesFiltro} filtro={filtro} onFiltroChange={handleFiltroChange} />
-
 {/* Lista de categorías de mascotas filtradas */}
       {categoriasMascotas.filter((categoria) => filtro === "Todos" || categoria.categoria === filtro)
       .map((categoria) => (
@@ -116,9 +86,6 @@ const obtenerCategoriasMascotas = async () => {
            <div className="categoria_mascotas">
            <p className="card-textt">{categoria.historia} </p>
            </div>
-           <button className="btn-favorito" onClick={() => handleFavoritoClick(categoria.id)}>
-              <FaHeart />
-            </button>
             {/* <a href="#" className="btn btn-primary">
               Go somewhere
             </a> */}
@@ -129,5 +96,4 @@ const obtenerCategoriasMascotas = async () => {
     </div>
   );
 };
-
 export default CategoriasMascotas;
