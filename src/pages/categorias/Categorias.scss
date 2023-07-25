@@ -72,3 +72,37 @@
    }
 
 
+   
+
+   
+.card {
+    /* Estilos de la tarjeta de mascota */
+    /* ... */
+    position: relative;
+  }
+  
+  .btn-favorito {
+    /* Estilos del botón de favoritos */
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    width: 32px;
+    height: 32px;
+    border: none;
+    border-radius: 50%;
+    background-color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    z-index: 1;
+  }
+  
+  /* Estilo del corazón dentro del botón */
+  .btn-favorito svg {
+    fill: #ff0000;
+    width: 20px;
+    height: 20px;
+  }
+  
+

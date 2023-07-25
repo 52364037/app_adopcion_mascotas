@@ -1,14 +1,36 @@
-import React from "react";
+import React, { useState, useEffect }  from "react";
 import "./Footer.scss";
 import { FaHouse } from "react-icons/fa6";
 import { FaComment } from "react-icons/fa6";
 import { FaHeart } from "react-icons/fa6";
 import { FaUserLarge } from "react-icons/fa6";
+import { collection, query, where, onSnapshot } from "firebase/firestore";
+import { dataBase } from "../../Firebase/firebaseConfig";
+import Favoritos from "../../pages/favoritos/Favoritos";
 
 const Footer = () => {
   const handleRouteChange = (route) => {
     window.location.href = route;
   };
+  const [favoritos, setFavoritos] = useState([]);
+
+  useEffect(() => {
+    const obtenerFavoritos = async () => {
+      try {
+        const q = query(collection(dataBase, "CategoriasMascotas"), where("favorito", "==", true));
+        const unsubscribe = onSnapshot(q, (querySnapshot) => {
+          const favoritosData = querySnapshot.docs.map((doc) => ({ ...doc.data(), id: doc.id }));
+          setFavoritos(favoritosData);
+        });
+
+        return unsubscribe;
+      } catch (error) {
+        console.error("Error al obtener los favoritos:", error);
+      }
+    };
+
+    obtenerFavoritos();
+  }, []);
 
   return (
     <div className="container">
@@ -92,9 +114,20 @@ const Footer = () => {
               </button>
             </li>
           </ul>
-        </div>
+          <div className="favoritos-container">
+        {favoritos.map((mascota) => (
+          <div key={mascota.id} className="favorito-card">
+            <Favoritos mascotasFavoritas={mascota} />
+            {/* Mostrar información de la mascota favorita */}
+          </div>
+        ))}
       </div>
     </div>
+  
+
+        </div>
+      </div>
+
   );
 };
 
