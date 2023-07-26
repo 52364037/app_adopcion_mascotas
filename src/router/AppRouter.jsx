@@ -17,7 +17,6 @@ import { auth } from "../Firebase/firebaseConfig";
 import Spinner from "react-bootstrap/Spinner";
 import { useDispatch, useSelector } from "react-redux";
 import { loginActionSync } from "../redux/actions/userActions";
-import Home from "../pages/home/Home";
 
 
 const AppRouter = () => {
@@ -76,6 +75,7 @@ const AppRouter = () => {
               <Route path="/mascotas/:id" component={MascotaDetalle} />
             </Route>
             <Route path="categorias" element={<Categorias />} />
+            <Route path="filtrocategorias" element={<FiltroCategorias />} />
           </Route>
         </Route>
       </Routes>

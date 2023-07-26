@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { collection, getDocs } from "firebase/firestore";
 import { dataBase } from "../../Firebase/firebaseConfig";
-import FiltroCategorias from "../../pages/filtroCategorias/FiltroCategorias";
 import AdoptaTitle from "../../assets/Adopta una adorable mascota.png";
 import Personalidad from "../../assets/Frame 35.png";
 import genero from "../../assets/hembra.png";
@@ -54,7 +53,8 @@ const CategoriasMascotas = () => {
       </figure>
       <h2>Categorías de mascotas</h2>
        {/* Agregar los botones de filtro y pasar el estado y función */}
-       <FiltroCategorias opciones={opcionesFiltro} filtro={filtro} onFiltroChange={handleFiltroChange} />
+       {/* <FiltroCategorias opciones={opcionesFiltro} filtro={filtro} onFiltroChange={handleFiltroChange} /> */}
+
 {/* Lista de categorías de mascotas filtradas */}
       {categoriasMascotas.filter((categoria) => filtro === "Todos" || categoria.categoria === filtro)
       .map((categoria) => (

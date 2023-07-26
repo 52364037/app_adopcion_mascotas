@@ -24,6 +24,7 @@ const Footer = () => {
           setFavoritos(favoritosData);
         });
 
+<<<<<<< HEAD
         return unsubscribe;
       } catch (error) {
         console.error("Error al obtener los favoritos:", error);
@@ -125,6 +126,13 @@ const Footer = () => {
       </div>
     </div>
   
+=======
+        <div className="container">
+            <div className="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
+                {/* <button className="d-flex align-items-center my-2 my-lg-0 me-lg-auto text-white text-decoration-none">
+                    {/* <svg className="bi me-2" width="40" height="32" role="img" aria-label="Bootstrap"><use href="#bootstrap" /></svg> */}
+                {/* </button> */} 
+>>>>>>> 739ec62a8cae387fcbdb62ec0b78bfd1cc95fa0d
 
         </div>
       </div>

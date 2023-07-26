@@ -78,22 +78,24 @@ const Home = () => {
 
   return (
     <div>
-        {/* Agregar el componente FiltroMascotas */}
-      <FiltroMascotas
-        opciones={['Todos', 'Perros', 'Gatos']} // Opciones de filtro para el componente
-        filtro={filtro}
-        onFiltroChange={handleFiltroChange}
-      />
-      {/* Renderizar cada mascota */}
-      {mascotasFiltradas.map((mascota, index) => (
-        <div key={index} className="card">
-          <img src={mascota.imagen} className="card-img-top" alt={mascota.nombre} />
-          <div className="card-body">
-            <h5 className="card-title">{mascota.nombre}</h5>
-            <p className="card-text">Raza: {mascota.raza}</p>
+      Home
+      <div className="Avatar">
+        <Image src={user?.avatar} roundedCircle />
+      </div>
+      <div className="Name_user">
+        <h2>{user?.name}</h2>
+      </div>
+
+      <button onClick={() => dispatch(logoutActionAsync())}>
+        Cerrar Sesión
+      </button>
+      <form></form>
+        <div className="container">
+          <div className="name">
+            <label for="nombre"><h4>Nombre:</h4></label>
           </div>
         </div>
-      ))}
+      ))
     </div>
   );
 };

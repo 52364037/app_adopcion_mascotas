@@ -1,4 +1,5 @@
 import React from 'react';
+// import Selector from "../../assets/categorias.png";
 
 const FiltroCategorias = ({ opciones, filtro, onFiltroChange }) => {
   const datos = [
@@ -10,9 +11,12 @@ const FiltroCategorias = ({ opciones, filtro, onFiltroChange }) => {
   return (
     <div>
       {/* Botones de filtro */}
-     <button onClick={() => onFiltroChange("Todos")}>Todos</button>
-      <button onClick={() => onFiltroChange("Perros")}>Perros</button>
+     {/* <button onClick={() => onFiltroChange("Todos")}>Todos</button> */}
+     <div>
+      {/* <img src={Selector} alt="selector" /> */}
+     <button onClick={() => onFiltroChange("Perros")}>Perros</button>
       <button onClick={() => onFiltroChange("Gatos")}>Gatos</button> 
+     </div>
 
       {/* <button onClick={() => onFiltroChange("Todos")}>Todos</button>
       {opciones.map((opcion) => (
