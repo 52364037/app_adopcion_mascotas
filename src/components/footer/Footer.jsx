@@ -1,4 +1,5 @@
 import React, { useState, useEffect }  from "react";
+import BotonMeGusta from "../../pages/BotonMeGusta/BotonMeGusta";
 import "./Footer.scss";
 import { FaHouse } from "react-icons/fa6";
 import { FaComment } from "react-icons/fa6";
@@ -117,7 +118,7 @@ const Footer = () => {
           <div className="favoritos-container">
         {favoritos.map((mascota) => (
           <div key={mascota.id} className="favorito-card">
-            <Favoritos mascotasFavoritas={mascota} />
+              <Favoritos mascota={mascota} />
             {/* Mostrar información de la mascota favorita */}
           </div>
         ))}

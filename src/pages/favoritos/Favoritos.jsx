@@ -14,6 +14,12 @@ const Favoritos = ({ mascotasFavoritas }) => {
         <div key={mascota.id}>
           <h3>{mascota.nombre}</h3>
           <img src={mascota.imagen} alt={mascota.nombre} />
+          <p>Categoría: {mascota.categoria}</p>
+          <p>Edad: {mascota.edad}</p>
+          <p>Historia: {mascota.historia}</p>
+          <p>Raza: {mascota.raza}</p>
+          <p>Personalidad: {mascota.personalidad}</p>
+          <p>Id: {mascota.id}</p>
         </div>
       ))}
     </div>

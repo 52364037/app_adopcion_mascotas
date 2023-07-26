@@ -8,11 +8,13 @@ import genero from "../../assets/hembra.png";
 import Raza from "../../assets/raza.png";
 import EdadMascota from "../../assets/edad.png";
 import Ubication from "../../assets/ubication.png";
+import BotonMeGusta from "../../pages/BotonMeGusta/BotonMeGusta"; 
 import "./Categorias.scss";
 
 
 const CategoriasMascotas = () => {
   const [categoriasMascotas, setCategoriasMascotas] = useState([]);
+  const [favoritos, setFavoritos] = useState([]);
   const [filtro, setFiltro] = useState("Todos"); // Estado del filtro
  
 
@@ -37,6 +39,11 @@ const CategoriasMascotas = () => {
   const handleFiltroChange = (nuevoFiltro) => {
     setFiltro(nuevoFiltro);
   };
+
+  const handleFavoritoClick = (mascota) => {
+    setFavoritos((prevFavoritos) => [...prevFavoritos, mascota]);
+  };
+
 
   const opcionesFiltro = categoriasMascotas.map((categoria) => categoria.categoria);
 
@@ -91,6 +98,8 @@ const CategoriasMascotas = () => {
             </a> */}
           </div>
           </div>
+          {/* Agrega el botón de "Me gusta" dentro del div.card-body */}
+          <BotonMeGusta onClick={() => handleFavoritoClick(categoria)} />
         </div>
       ))}
     </div>
