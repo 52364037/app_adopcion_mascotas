@@ -11,15 +11,15 @@ const Footer = () => {
     return (
 
         <div className="container">
-            <div className="container1 d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
-                <a href="#" className="d-flex align-items-center my-2 my-lg-0 me-lg-auto text-white text-decoration-none">
-                    <svg className="bi me-2" width="40" height="32" role="img" aria-label="Bootstrap"><use href="#bootstrap" /></svg>
-                </a>
+            <div className="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
+                {/* <button className="d-flex align-items-center my-2 my-lg-0 me-lg-auto text-white text-decoration-none">
+                    {/* <svg className="bi me-2" width="40" height="32" role="img" aria-label="Bootstrap"><use href="#bootstrap" /></svg> */}
+                {/* </button> */} 
 
                <div className='footer'>
                <ul className="nav col-12 col-lg-auto my-2 justify-content-center my-md-0 text-small">
                     <li className='Home'>
-                        <a href="#" className="nav-link text-secondary">
+                        <button className="nav-link text-secondary">
                             
                             
                             <svg className="bi1 d-block mx-auto mb-1" width="24" height="24"><use href="#home" /></svg>
@@ -27,34 +27,34 @@ const Footer = () => {
                             <div className='icon_home' title='Home'>
                                 <FaHouse />
                             </div>
-                        </a>
+                        </button>
                     </li>
                     <li>
-                        <a href="#" className="nav-link text-secondary">
+                        <button className="nav-link text-secondary">
                             <svg className="bi2 d-block mx-auto mb-1" width="24" height="24"><use href="#speedometer2" /></svg>
                             
                             <div className='icon_comment' title='Comentarios'>
                                 <FaComment />
                             </div>
-                        </a>
+                        </button>
                     </li>
                     <li>
-                        <a href="#" className="nav-link text-secondary">
+                        <button className="nav-link text-secondary">
                             <svg className="bi3 d-block mx-auto mb-1" width="24" height="24"><use href="#table" /></svg>
                            
                             <div className='icon_heard' title='Favoritos'>
                                 <FaHeart />
                             </div>
-                        </a>
+                        </button>
                     </li>
                     <li>
-                        <a href="#" className="nav-link text-secondary">
+                        <button className="nav-link text-secondary">
                             <svg className="bi4 d-block mx-auto mb-1" width="24" height="24"><use href="#grid" /></svg>
                            
                             <div className='icon_user' title='Perfil'>
                                 <FaUserLarge />
                             </div>
-                        </a>
+                        </button>
                     </li>
                 </ul>
                </div>

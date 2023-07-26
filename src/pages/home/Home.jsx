@@ -21,9 +21,9 @@ const Home = () => {
         <h2>{user?.name}</h2>
       </div>
 
-      {/* <button onClick={() => dispatch(logoutActionAsync())}>
+      <button onClick={() => dispatch(logoutActionAsync())}>
         Cerrar Sesión
-      </button> */}
+      </button>
       <form>
         <div className="container">
           <div className="name">

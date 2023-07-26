@@ -15,6 +15,7 @@ import { auth } from "../Firebase/firebaseConfig";
 import Spinner from "react-bootstrap/Spinner";
 import { useDispatch, useSelector } from "react-redux";
 import { loginActionSync } from "../redux/actions/userActions";
+import FiltroCategorias from '../pages/filtroCategorias/FiltroCategorias';
 
 
 const AppRouter = () => {
@@ -68,6 +69,7 @@ const AppRouter = () => {
           <Route element={<PrivateRouter isAutentication={isLoggedIn} />}>
             <Route path="home" element={<Home />} />
             <Route path="categorias" element={<Categorias />} />
+            <Route path="filtrocategorias" element={<FiltroCategorias />} />
           </Route>
         </Route>
     </Routes>

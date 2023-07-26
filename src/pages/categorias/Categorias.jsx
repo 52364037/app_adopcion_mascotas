@@ -9,10 +9,14 @@ import EdadMascota from "../../assets/edad.png";
 import Ubication from "../../assets/ubication.png";
 import "./Categorias.scss";
 
+
 const CategoriasMascotas = () => {
   const [categoriasMascotas, setCategoriasMascotas] = useState([]);
+  const [filtro, setFiltro] = useState("Todos"); // Estado del filtro
 
   useEffect(() => {
+// Lógica para obtener las categorías de mascotas...
+
     const obtenerCategoriasMascotas = async () => {
       try {
         const categoriasSnapshot = await getDocs(
@@ -30,6 +34,12 @@ const CategoriasMascotas = () => {
     obtenerCategoriasMascotas();
   }, []);
 
+  // Función para manejar el cambio de filtro
+  const handleFiltroChange = (nuevoFiltro) => {
+    setFiltro(nuevoFiltro);
+  };
+  const opcionesFiltro = categoriasMascotas.map((categoria) => categoria.categoria);
+
   return (
     <div className="container_cate">
       <figure className="present11">
@@ -37,7 +47,12 @@ const CategoriasMascotas = () => {
       </figure>
       <h2>Categorías de mascotas</h2>
 
-      {categoriasMascotas.map((categoria, index) => (
+       {/* Agregar los botones de filtro y pasar el estado y función */}
+       {/* <FiltroCategorias opciones={opcionesFiltro} filtro={filtro} onFiltroChange={handleFiltroChange} /> */}
+
+{/* Lista de categorías de mascotas filtradas */}
+      {categoriasMascotas.filter((categoria) => filtro === "Todos" || categoria.categoria === filtro)
+      .map((categoria, index) => (
         <div key={index} className="card" style={{ width: "25rem" }}>
           <img src={categoria.imagen} className="card-img-top" alt="..." />
           <div className="card-body">
