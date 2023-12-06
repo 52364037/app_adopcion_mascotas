@@ -8,7 +8,6 @@ import presentacion1 from '../../assets/presentacion1.png';
 
 const Presentacion1 = () => {
   const navigate = useNavigate();
-
   const handleClick = () => {
 navigate('/Presentacion2');
 };
